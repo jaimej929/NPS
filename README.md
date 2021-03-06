@@ -8,11 +8,11 @@ Using python flask, we will be using a custom "creative" d3.js project. We will 
 - Mary Mays
 - Lisa Stroh
 
-## Ideas
+## Inspiration
 Some of the type of visuals we wish to show are listed below.
-
+### Markers
 ![markers map](images/markers.png)
-
+### Population Graph
 ![population graphics](images/population.png)
-
+### Weather Style Map
 ![weather map](images/weather.png)
