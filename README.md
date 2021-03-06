@@ -7,3 +7,9 @@ Using python flask, we will be using a custom "creative" d3.js project. We will 
 - Ashwini Kamat
 - Mary Mays
 - Lisa Stroh
+
+## Questions to Address
+- At which park can I do my favorite activities?
+- What is the weather like at each park?
+- How busy is a given park?
+- Which national park should I visit?
