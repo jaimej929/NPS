@@ -7,3 +7,12 @@ Using python flask, we will be using a custom "creative" d3.js project. We will 
 - Ashwini Kamat
 - Mary Mays
 - Lisa Stroh
+
+## Ideas
+Some of the maps we wish to make are listed below.
+
+![markers map](Images/marker.png)
+
+![population graphics](Images/population.png)
+
+![weather map](Images/weather.png)
