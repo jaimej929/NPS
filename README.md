@@ -11,7 +11,7 @@ Using python flask, we will be using a custom "creative" d3.js project. We will 
 ## Ideas
 Some of the maps we wish to make are listed below.
 
-![markers map](images/marker.png)
+![markers map](images/markers.png)
 
 ![population graphics](images/population.png)
 
