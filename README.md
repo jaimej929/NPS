@@ -9,7 +9,7 @@ Using python flask, we will be using a custom "creative" d3.js project. We will 
 - Lisa Stroh
 
 ## Ideas
-Some of the maps we wish to make are listed below.
+Some of the type of visuals we wish to show are listed below.
 
 ![markers map](images/markers.png)
 
