@@ -133,3 +133,6 @@ config.py
 
 # CSV files
 *.csv
+
+#JS files
+config.js
