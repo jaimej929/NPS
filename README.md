@@ -16,3 +16,8 @@ Some of the type of visuals we wish to show are listed below.
 ![population graphics](images/population.png)
 ### Weather Style Map
 ![weather map](images/weather.png)
+## Questions to Address
+- At which park can I do my favorite activities?
+- What is the weather like at each park?
+- How busy is a given park?
+- Which national park should I visit?

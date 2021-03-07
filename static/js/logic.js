@@ -27,9 +27,4 @@ var marker = L.marker([39.52, -98.67], {
     NORMAL: new L.LayerGroup(),
     OUT_OF_ORDER: new L.LayerGroup()
   };
-  var maxBounds = [
-    [5.499550, -167.276413], //Southwest
-    [83.162102, -52.233040]  //Northeast
-];
-myMap.setMaxBounds(maxBounds);
-myMap.fitBounds(maxBounds);
+
