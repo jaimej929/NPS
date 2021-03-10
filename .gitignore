@@ -134,3 +134,6 @@ config.js
 
 # CSV files
 *.csv
+
+#JS files
+config.js
