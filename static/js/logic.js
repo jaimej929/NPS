@@ -67,7 +67,7 @@ function createMap(NationalParks) {
   
       // For each park, create a marker and bind a popup with the parks's name and add picture
       var parkMarker = L.marker([npark.lat, npark.long])
-        .bindPopup("<h3>" + npark.park_name + "</h3>" + "<img src='" + image + "'/>");
+        .bindPopup("<h3>" + npark.park_name + "</h3>" + "<img src='" + image + "'" + "class=popupImage " + "/>");
         console.log(image);
   
       // Add the marker to the parkMarkers array
@@ -84,3 +84,4 @@ function createMap(NationalParks) {
 
   axios.get('http://localhost:5000/')
   .then(createMarkers);
+//   shelter1.bindPopup("<img src='" + picURL2 + "'" + " class=popupImage " + "/>");
