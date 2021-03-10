@@ -1,1 +1,1 @@
-var API_KEY = "pk.eyJ1IjoiamFpbWVqOSIsImEiOiJja2xsaXdxZ2owNXJzMnVvMW53cWtxNjIyIn0.I4pPX-qz5z7O0sfd6zqz-Q";
+var API_KEY = "pk.eyJ1IjoibGlzYjAyMCIsImEiOiJja2xsamVvbWswcWtkMm9wM3phamw5ajQ5In0.VMo77cesBy3oWelaySG_kw";
