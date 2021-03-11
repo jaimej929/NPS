@@ -1,4 +1,4 @@
-axios.get('http://localhost:5000/')
+axios.get('http://localhost:5500/')
   .then(function (response) {
     // handle success
     console.log(response);
