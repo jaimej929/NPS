@@ -86,8 +86,8 @@ def home():
     return jsonify(all_data)
 
 # Define what to do when a user hits the /about route
-@app.route("/about")
-def about():
+@app.route("/graph")
+def graph():
     print("Server received request for 'About' page...")
     return "Welcome to my 'About' page!"
 
