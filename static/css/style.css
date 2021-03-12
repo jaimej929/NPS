@@ -20,10 +20,10 @@ html {
     display: block;
 }
 
-html, body
+/* html, body
 {
     height: 100%;
-}
+} */
 
 #map-holder{
     height: 100%;
@@ -49,4 +49,19 @@ html, body
 .well{
   color: green;
   font-weight: bold;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.navigation .navbar-brand {
+  color: rgb(17, 145, 196);
+  margin-left: 0px;
+  padding: inherit;
+  font-weight: bold;
+  background-color: rgb(12, 12, 12);
+  font-family: cochin;
 }
