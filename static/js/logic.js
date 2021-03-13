@@ -34,6 +34,7 @@ function createdropdown(data) {
  * * */
 function selectdropdown(activityid) {
     //create empty lists to hold parkCode and parks
+    d3.select("#sample-weatherdata").html("");
     let parkCode = [];
     let parks = [];
     if (activityid == "allparks") {
@@ -156,10 +157,13 @@ function getCurrentWeather(parkCode){
 function display_temps(weather){
   console.log(weather.main.temp);
   let temps = weather.main.temp;
+  let feelslike = weather.main.feels_like;
+  let desc = weather.weather[0].description;
   console.log(temps);
-
-  d3.select("#sample-weatherdata").html(`${temps} F`);
-  // d3.select('div.title').text('My new book')
+  let curr_conditions = "<p style='color:green'>Current temperature:<br>" + 
+                           temps + " F<br>Feels like:<br>" + feelslike +
+                          "<br>Current conditions:<br>" + desc  +"</p>";
+  d3.select("#sample-weatherdata").html(curr_conditions);
 }
 
 
@@ -178,42 +182,46 @@ function getVisitorStats(park, visitor){
     let year = "2020";
     let p_name = [];
     let v_count = [];
+    // let Iv_count = v_count.replace(/,/g, "");
+    console.log(p_name);
     console.log(visitor);
+    console.log(v_count);
+    
 
     for (p of park) {
       for (v of visitor) {
         if ((p.park_code == v.park_code) && v.year == year) {
           p_name.push(p.park_name);
-          v_count.push(v.visitors);
+          let visNum = String(v.visitors).replace(/,/g,'');
+
+          // console.log(visNum);
+
+          v_count.push(parseInt(visNum));
           break;
         }
      }
    }
-  console.log(v_count);
-  console.log(p_name);
 
-    
-    
 
 
 
     
-// var trace1 = {
-//   y: otu_id_strs.slice(0,10),
-//   x: subjectSamples[0].sample_values.slice(0,10),
-//   text:subjectSamples[0].otu_labels.slice(0,10),
-//   name: "Yuck",
-//   type: "bar",
-//   orientation: 'h'
-// };
-// // Apply the group barmode to the layout
-// var layout = {
-//   title: "Gross stuff",
-//   barmode: "group"
-//   }
-// var traceData = [trace1];
-// // Render the plot to the div tag with id "plot"
-// Plotly.newPlot("bar", , layout);
+  var trace1 = {
+    y: v_count,
+    x: p_name,
+    // text:subjectSamples[0].otu_labels.slice(0,10),
+    name: "Yuck",
+    type: "bar",
+    orientation: 'h'
+  };
+  // Apply the group barmode to the layout
+  var layout = {
+    title: "Gross stuff",
+    barmode: "group"
+  }
+  var traceData = [trace1];
+  // Render the plot to the div tag with id "plot"
+  Plotly.newPlot("bar-plot", traceData, layout);
 
 
 
@@ -253,9 +261,7 @@ function getVisitorStats(park, visitor){
 
     // add activities to the dropdown
     createdropdown(response.data.activities)
-
-    getVisitorStats(response.data.park, response.data.visitors)
-
+    
   }
 
 
