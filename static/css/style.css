@@ -83,13 +83,11 @@ body {
 
 h3,
 .h3 {
-    font-size: 800%;
+    font-size: 500%;
     text-align: center;
     mix-blend-mode: difference;
     color: rgb(255, 255, 255);
-    filter: brightness(500%)
-    
-    
+    filter: brightness(500%)   
 }
 
 p,
@@ -102,6 +100,12 @@ p,
 h4,
 .h4 {
     font-size: 100%;
+    text-align: center;
+    color: rgb(250, 250, 250);
+}
+h5,
+.h5 {
+    font-size: 1%;
     text-align: center;
     color: rgb(250, 250, 250);
 }

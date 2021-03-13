@@ -68,7 +68,7 @@ function selectdropdown(activityid) {
     
       // For each park, create a marker and bind a popup with the parks's name and add picture
       var parkMarker = L.marker([npark.lat, npark.long])
-        .bindPopup("<h3>" + npark.park_name + "</h3>" + "<img src='" + image + "'" + "class=popupImage " + "/>");  
+        .bindPopup("<h5>" + npark.park_name + "</h5>" + "<img src='" + image + "'" + "class=popupImage " + "/>");  
 
       // Add the marker to the parkMarkers array
       parkMarkers.push(parkMarker);
