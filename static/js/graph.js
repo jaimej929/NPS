@@ -86,7 +86,15 @@ function getVisitorStats(park, visitor){
   // Apply the group barmode to the layout
   var layout = {
     title: "Park Visitations 2017 through 2020",
-    barmode: "relative"
+    barmode: "relative",
+    margin: {
+      l: 50,
+      r: 50,
+      b: 200,
+      t: 100,
+      pad: 5
+    },
+
   }
   var traceData = [trace1, trace2, trace3, trace4];
   // Render the plot to the div tag with id "plot"
