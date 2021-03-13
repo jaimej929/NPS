@@ -123,7 +123,6 @@ function onMarkerClick() {
    console.log(parkCode);
 
    getCurrentWeather(parkCode);
-   getVisitorStats(parkCode);
 
 }
 
@@ -135,10 +134,38 @@ function onMarkerClick() {
 */
 function getCurrentWeather(parkCode){
     //find park in the park data
-
-
+    let lat = "";
+    let long = "";
+    let parkname = "";
+    for (park of allData.park) {
+      if (parkCode == park.park_code) {
+        lat= park.lat;
+        long = park.long;
+        parkname = park.park_name;
+      break;
+     }
+   }
+   console.log(lat);
+   console.log(long);
+   console.log(parkname);
+   let url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${WEATHER_KEY}&units=imperial`
+   response = d3.json(url).then(display_temps);
+   console.log(response);
 
 }
+function display_temps(weather){
+  console.log(weather.main.temp);
+  let temps = weather.main.temp;
+  console.log(temps);
+
+  d3.select("#sample-weatherdata").html(`${temps} F`);
+  // d3.select('div.title').text('My new book')
+}
+
+
+
+
+
 
 /**************************************************************** 
  * function getVisitorStats 
@@ -146,11 +173,52 @@ function getCurrentWeather(parkCode){
  * draw a graph
  * Display somewhere 
 */
-function getVisitorStats(parkCode){
+function getVisitorStats(park, visitor){
     //get all the records for the park in the park stats data
+    let year = "2020";
+    let p_name = [];
+    let v_count = [];
+    console.log(visitor);
+
+    for (p of park) {
+      for (v of visitor) {
+        if ((p.park_code == v.park_code) && v.year == year) {
+          p_name.push(p.park_name);
+          v_count.push(v.visitors);
+          break;
+        }
+     }
+   }
+  console.log(v_count);
+  console.log(p_name);
+
+    
+    
+
+
+
+    
+// var trace1 = {
+//   y: otu_id_strs.slice(0,10),
+//   x: subjectSamples[0].sample_values.slice(0,10),
+//   text:subjectSamples[0].otu_labels.slice(0,10),
+//   name: "Yuck",
+//   type: "bar",
+//   orientation: 'h'
+// };
+// // Apply the group barmode to the layout
+// var layout = {
+//   title: "Gross stuff",
+//   barmode: "group"
+//   }
+// var traceData = [trace1];
+// // Render the plot to the div tag with id "plot"
+// Plotly.newPlot("bar", , layout);
+
 
 
 }
+
 
 /**************************************************************** 
  * function createAllParks 
@@ -176,7 +244,6 @@ function getVisitorStats(parkCode){
       // For each park, create a marker and bind a popup with the parks's name and add picture
       var parkMarker = L.marker([npark.lat, npark.long])
         .bindPopup("<h3>" + npark.park_name + "</h3>" + "<img src='" + image + "'" + "class=popupImage " + "/>");
-
       // Add the marker to the parkMarkers array
       parkMarkers.push(parkMarker);
 
@@ -188,6 +255,8 @@ function getVisitorStats(parkCode){
     createdropdown(response.data.activities)
     
   }
+
+
    
   // Perform an axios call to the SQLlite dataset to get parks information. Call createMarkers when complete
 
