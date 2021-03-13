@@ -35,7 +35,11 @@ They have been asked  to develop a web page which provides users with an interac
 - Additional js and html pages (graph.js, graphs.html) were created to create and display the graphed statistical data. These are accessed via a navbar.
 - A dropdown presents the possible list of park activities. The map updates to show which national parks offer a selected activity. The park name and an image from the National Park Service API are displayed when a marker is clicked. The current weather for the park is retrieved via the weather api and displayed on the page.
 
+![alt text](https://github.com/jaimej929/NPS/blob/main/images/Main%20page%20with%20marker%20clicked.png)
+![alt text](https://github.com/jaimej929/NPS/blob/main/images/Main%20page%20with%20activity%20selected.png)
+
 
 - Statistics about park visits for years 2017-2020 are displayed on a graph on the second page. 
 
+![alt text](https://github.com/jaimej929/NPS/blob/main/images/Visitor%20Graph%20page%20zoomed%20in.png)
 
