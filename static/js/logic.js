@@ -68,7 +68,7 @@ function selectdropdown(activityid) {
     
       // For each park, create a marker and bind a popup with the parks's name and add picture
       var parkMarker = L.marker([npark.lat, npark.long])
-        .bindPopup("<h3>" + npark.park_name + "</h3>" + "<img src='" + image + "'" + "class=popupImage " + "/>");  
+        .bindPopup("<h5>" + npark.park_name + "</h5>" + "<img src='" + image + "'" + "class=popupImage " + "/>");  
 
       // Add the marker to the parkMarkers array
       parkMarkers.push(parkMarker);
@@ -160,7 +160,7 @@ function display_temps(weather){
   let feelslike = weather.main.feels_like;
   let desc = weather.weather[0].description;
   console.log(temps);
-  let curr_conditions = "<p style='color:green'>Current temperature:<br>" + 
+  let curr_conditions = "<br><p style='color:white'>Current temperature:<br>" + 
                            temps + " F<br>Feels like:<br>" + feelslike +
                           "<br>Current conditions:<br>" + desc  +"</p>";
   d3.select("#sample-weatherdata").html(curr_conditions);
@@ -251,7 +251,7 @@ function getVisitorStats(park, visitor){
   
       // For each park, create a marker and bind a popup with the parks's name and add picture
       var parkMarker = L.marker([npark.lat, npark.long])
-        .bindPopup("<h3>" + npark.park_name + "</h3>" + "<img src='" + image + "'" + "class=popupImage " + "/>");
+        .bindPopup("<h5>" + npark.park_name + "</h5>" + "<img src='" + image + "'" + "class=popupImage " + "/>");
       // Add the marker to the parkMarkers array
       parkMarkers.push(parkMarker);
 
