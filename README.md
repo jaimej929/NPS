@@ -1,8 +1,7 @@
 # NPS
 ## Project Background
-After graduating from the KU Data Analytics Bootcamp with flying colors, the group members were hired by a travel agency.
-They have been asked  to develop a web page which provides users with an interactive experience to explore different activities at various parks and ultimately promote visiting National Parks in the United States. 
-
+After months of stressful participation in the KU Data Analytics Bootcamp, we were all ready for a vacation. We were wondering which national park we should visit. 
+We have developed a web page which provides users with an interactive experience to explore different activities at various parks which could ultimately promote visiting National Parks in the United States. 
 
 ## Questions to Address
 - At which park can I do my favorite activities?
