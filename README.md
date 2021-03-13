@@ -26,7 +26,7 @@ They have been asked  to develop a web page which provides users with an interac
 - Graph done with plotly
 - Bootstrap and css for design
 
-- The jupyter notebook (Project2.ipynb) collected the data from  [National Park Service (NPS) JSON API] (https://www.nps.gov/subjects/developer/api-documentation.htm) and the [statistical data] (https://irma.nps.gov/STATS/) in csv. It was cleaned and then stored into sqlite relational database.
+- The jupyter notebook (Project2.ipynb) collected the data from  [National Park Service (NPS) JSON API](https://www.nps.gov/subjects/developer/api-documentation.htm) and the [statistical data](https://irma.nps.gov/STATS/) in csv. It was cleaned and then stored into sqlite relational database.
 - A flask app was created in python (app.py)  with 3 routes for the website pages. The app connected to the sqlite database and read the tables into a single list of dictionaries, and returned this data. We wrapped the app in CORS.
 - the javascript (logic.js) used axios to access the data returned from the python app. 
 - The main.html page, built using Bootstrap and css was fed by logic.js. This javascript used Leaflet and D3, and also calls the [OpenWeatherMap API] (api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}) when clicking a location marker.
