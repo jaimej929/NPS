@@ -28,10 +28,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            <a class="nav-link active" aria-current="page" href="index.html">Map of Parks</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="graphs.html">Visitor Graph</a>
+            <a class="nav-link" href="graphs.html">Visitors by Year</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="AboutPage.html">About</a>
@@ -43,12 +43,17 @@
   
   <!-- Create bootstrap grid-->
   <div class="container">
-    <div class="row">
-      <div class="col-md-12 jumbotron text-center">
-        <h3>National Park Service Travel Help</h3>
-        <p>Use the maps below to help you choose which national park to travel</p>
+    <div id = "header">
+      <div id = "header-content">
+        <h3>National Park Service Travel Guide</h3>
+        <p>Use the map below to help you plan your next national park adventure!</p>
       </div>
-    </div> 
+    </div>
+      <!-- <div class="col-md-12 jumbotron text-center">
+        <h3>National Park Service Travel Help</h3>
+        <p>Use the map below to help you choose which national park to travel to!</p>
+      </div>
+    </div>  -->
     <div class="row mapheight">
       <div class="col-md-10">
         <!-- Our map goes here -->
@@ -56,15 +61,17 @@
       </div>
       <div class="col-md-2">
         <div class="well">
-          <h5>Select Activity:</h5>
+          <h5>Select an Activity:</h5>
           <select id="selActivity" onchange="selectdropdown(this.value)"></select>
         </div>
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Weather Info</h3>
-          </div>
-          <div id="sample-weatherdata" class="panel-body"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h4 class="panel-title">Weather Information: </h3>
         </div>
+        <div id="sample-weatherdata" class="panel-body"></div>
       </div>
     </div>
   </div>
