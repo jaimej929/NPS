@@ -34,6 +34,7 @@ function createdropdown(data) {
  * * */
 function selectdropdown(activityid) {
     //create empty lists to hold parkCode and parks
+    d3.select("#sample-weatherdata").html("");
     let parkCode = [];
     let parks = [];
     if (activityid == "allparks") {
@@ -156,10 +157,13 @@ function getCurrentWeather(parkCode){
 function display_temps(weather){
   console.log(weather.main.temp);
   let temps = weather.main.temp;
+  let feelslike = weather.main.feels_like;
+  let desc = weather.weather[0].description;
   console.log(temps);
-
-  d3.select("#sample-weatherdata").html(`${temps} F`);
-  // d3.select('div.title').text('My new book')
+  let curr_conditions = "<p style='color:green'>Current temperature:<br>" + 
+                           temps + " F<br>Feels like:<br>" + feelslike +
+                          "<br>Current conditions:<br>" + desc  +"</p>";
+  d3.select("#sample-weatherdata").html(curr_conditions);
 }
 
 
@@ -253,9 +257,7 @@ function getVisitorStats(park, visitor){
 
     // add activities to the dropdown
     createdropdown(response.data.activities)
-
-    getVisitorStats(response.data.park, response.data.visitors)
-
+    
   }
 
 
