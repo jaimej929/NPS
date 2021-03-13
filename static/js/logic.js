@@ -186,6 +186,7 @@ function getVisitorStats(parkCode){
 
     // add activities to the dropdown
     createdropdown(response.data.activities)
+    
   }
    
   // Perform an axios call to the SQLlite dataset to get parks information. Call createMarkers when complete
