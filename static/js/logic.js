@@ -178,42 +178,46 @@ function getVisitorStats(park, visitor){
     let year = "2020";
     let p_name = [];
     let v_count = [];
+    // let Iv_count = v_count.replace(/,/g, "");
+    console.log(p_name);
     console.log(visitor);
+    console.log(v_count);
+    
 
     for (p of park) {
       for (v of visitor) {
         if ((p.park_code == v.park_code) && v.year == year) {
           p_name.push(p.park_name);
-          v_count.push(v.visitors);
+          let visNum = String(v.visitors).replace(/,/g,'');
+
+          // console.log(visNum);
+
+          v_count.push(parseInt(visNum));
           break;
         }
      }
    }
-  console.log(v_count);
-  console.log(p_name);
 
-    
-    
 
 
 
     
-// var trace1 = {
-//   y: otu_id_strs.slice(0,10),
-//   x: subjectSamples[0].sample_values.slice(0,10),
-//   text:subjectSamples[0].otu_labels.slice(0,10),
-//   name: "Yuck",
-//   type: "bar",
-//   orientation: 'h'
-// };
-// // Apply the group barmode to the layout
-// var layout = {
-//   title: "Gross stuff",
-//   barmode: "group"
-//   }
-// var traceData = [trace1];
-// // Render the plot to the div tag with id "plot"
-// Plotly.newPlot("bar", , layout);
+  var trace1 = {
+    y: v_count,
+    x: p_name,
+    // text:subjectSamples[0].otu_labels.slice(0,10),
+    name: "Yuck",
+    type: "bar",
+    orientation: 'h'
+  };
+  // Apply the group barmode to the layout
+  var layout = {
+    title: "Gross stuff",
+    barmode: "group"
+  }
+  var traceData = [trace1];
+  // Render the plot to the div tag with id "plot"
+  Plotly.newPlot("bar-plot", traceData, layout);
 
 
 
