@@ -92,9 +92,8 @@ function getVisitorStats(park, visitor){
       r: 50,
       b: 200,
       t: 100,
-      pad: 5
-    },
-
+      pad: 4
+    }
   }
   var traceData = [trace1, trace2, trace3, trace4];
   // Render the plot to the div tag with id "plot"
