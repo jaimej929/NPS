@@ -1,18 +1,6 @@
-/* body {
-  padding: 0;
-  margin: 0;
-} */
 
-/* set map, body, and html to 100% of the screen size */
-/* #map,
-body,
-html {
-  height: 100%;
-} */
 #map
 {
-    /*flex-grow: 1; 
-    position: absolute;*/
     width: 100%;
     height: 600px;
     min-height: 100%;
@@ -20,11 +8,6 @@ html {
     max-width: 100%;
     display: block;
 }
-
-/* html, body
-{
-    height: 100%;
-} */
 
 #map-holder{
     height: 100%;
@@ -70,7 +53,6 @@ html {
   font-family: cochin;
 }
 
-
 body, html {
   height: 100%;
 }
@@ -99,6 +81,7 @@ h3,
     text-align: center;
     color: white;
 }
+
 p 
 {
   font-size: 120%;
@@ -112,9 +95,35 @@ h4,
     text-align: center;
     color: rgb(250, 250, 250);
 }
+
 h5,
 .h5 {
     font-size: 150%;
     text-align: center;
     color:black;
+}
+
+/* CSS for AboutPage.html */
+
+h1 {
+    font-size: 150%;
+    padding-left: 3%;
+    mix-blend-mode: difference;
+    color: rgb(255, 255, 255);
+    filter: brightness(500%)   
+}
+
+h2 {
+  font-size: 300%;
+  text-align: center;
+  mix-blend-mode: difference;
+  color: rgb(255, 255, 255);
+  filter: brightness(500%)   
+}
+
+.list {
+  font-size: 150%;
+  mix-blend-mode: difference;
+  color: rgb(255, 255, 255);
+  filter: brightness(500%)   
 }
