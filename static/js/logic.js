@@ -3,8 +3,8 @@ var allData = [];
 let normalmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
         attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
         tileSize: 512,
-        maxZoom: 6,
-        minZoom:4,
+        //maxZoom: 11,
+        minZoom:3,
         zoomOffset: -1,
         id: "mapbox/streets-v11",
         accessToken: API_KEY
@@ -80,7 +80,6 @@ function selectdropdown(activityid) {
  * 
  * * */
 function createMap(parkMarkerLayer,parkInfo) {
-  console.log(">>>>>>Creating Map");
 
   for (var name in overlayMaps) {
     myMap.removeLayer(overlayMaps[name]);
@@ -114,16 +113,13 @@ function createMap(parkMarkerLayer,parkInfo) {
  * 
 */
 function onMarkerClick() {
- console.log("in onMarkerClick");
-
- let classList = String(this.classList);
+ 
+  let classList = String(this.classList);
 
   let parkCode = classList.split(" ");
   parkCode = parkCode[parkCode.length - 1].replace("marker_", "");
 
-   console.log(parkCode);
-
-   getCurrentWeather(parkCode);
+  getCurrentWeather(parkCode);
 
 }
 
@@ -146,20 +142,14 @@ function getCurrentWeather(parkCode){
       break;
      }
    }
-   console.log(lat);
-   console.log(long);
-   console.log(parkname);
    let url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${WEATHER_KEY}&units=imperial`
    response = d3.json(url).then(display_temps);
-   console.log(response);
 
 }
 function display_temps(weather){
-  console.log(weather.main.temp);
   let temps = weather.main.temp;
   let feelslike = weather.main.feels_like;
   let desc = weather.weather[0].description;
-  console.log(temps);
   let curr_conditions = "<br><p style='color:white'>Current temperature:<br>" + 
                            temps + " F<br>Feels like:<br>" + feelslike +
                           "<br>Current conditions:<br>" + desc  +"</p>";
