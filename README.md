@@ -43,3 +43,5 @@ We have developed a web page which provides users with an interactive experience
 
 ![alt text](https://github.com/jaimej929/NPS/blob/main/images/Visitor%20Graph%20page%20zoomed%20in.png)
 
+## Presentation
+This project was presented with the following [presentation](https://github.com/jaimej929/NPS/blob/main/NPS.pdf)
