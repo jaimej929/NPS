@@ -4,6 +4,8 @@
  * draw a graph
  * Display somewhere 
 */
+// createAllParks(all_data);
+
 function getVisitorStats(park, visitor){
   //get all the records for the park in the park stats data
   let year1 = "2020";
@@ -104,6 +106,6 @@ function createAllParks(response) {
   getVisitorStats(response.data.park, response.data.visitors)
 }
 // Call database and run function
-axios.get('http://localhost:5000/')
+axios.get('http://localhost:5000/data')
 .then(createAllParks);
 
