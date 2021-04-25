@@ -4,7 +4,12 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 
-from flask import Flask, jsonify
+from flask import ( 
+    Flask,
+    render_template,
+    jsonify,
+    request,
+    redirect)
 from flask_cors import CORS
 
 # Database Setup
@@ -29,6 +34,12 @@ CORS(app)
 # Define what to do when a user hits the index route
 @app.route("/")
 def home():
+
+    return render_template("index.html")
+
+# Define what to do when a user hits the /about route
+@app.route("/data")
+def data():
     print("Server received request for 'Home' page...")
     # open session
     session = Session(engine)
@@ -85,11 +96,13 @@ def home():
     all_data = {"park": all_Parks, "activities": all_activities, "park_activities": all_park_activities, "visitors": all_visitors}
     return jsonify(all_data)
 
-# Define what to do when a user hits the /about route
 @app.route("/graph")
 def graph():
-    print("Server received request for 'About' page...")
-    return "Welcome to my 'About' page!"
+    return render_template("graphs.html")
+
+@app.route("/about")
+def about():
+    return render_template("AboutPage.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
