@@ -258,5 +258,5 @@ function getVisitorStats(park, visitor){
    
   // Perform an axios call to the SQLlite dataset to get parks information. Call createMarkers when complete
 
-  axios.get('http://localhost:5000/data')
+  axios.get('https://npsweb.herokuapp.com/data')
   .then(createAllParks);
