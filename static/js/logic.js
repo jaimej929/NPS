@@ -1,7 +1,7 @@
 // createAllParks(all_data);
 // var API_KEY = process.env.API_KEY
 // var WEATHER_KEY = process.env.WEATHER_KEY
-new webpack.EnvironmentPlugin(['API_KEY', 'WEATHER_KEY']);
+// new webpack.EnvironmentPlugin(['API_KEY', 'WEATHER_KEY']);
 
 var allData = [];
 let normalmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
