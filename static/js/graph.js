@@ -106,6 +106,7 @@ function createAllParks(response) {
   getVisitorStats(response.data.park, response.data.visitors)
 }
 // Call database and run function
+//axios.get('http://127.0.0.1:5000/data')
 axios.get('https://npsweb.herokuapp.com/data')
 .then(createAllParks);
 
