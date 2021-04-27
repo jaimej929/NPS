@@ -42,6 +42,7 @@ Park = create_classes_park(db)
 Activity = create_classes_activity(db)
 Park_Activities = create_classes_park_activities(db)
 Park_Stats = create_classes_park_stats(db)
+
 # Define what to do when a user hits the index route
 @app.route("/")
 def home():
@@ -56,10 +57,10 @@ def data():
     # session = Session(engine)
 
     # Query the sqlite database to get all the table information
-    results_parks = db.session.query(Park.park_code, Park.park_name, Park.lat, Park.long, Park.image_url, Park.image_title, Park.image_credit).all()
+    results_parks = db.session.query(Park.parkCode, Park.park_name, Park.lat, Park.long, Park.image_url, Park.image_title, Park.image_credit).all()
     results_activities = db.session.query(Activity.id, Activity.activities_name).all()
-    results_park_activities = db.session.query(Park_Activities.id, Park_Activities.park_code).all()
-    results_visitors = db.session.query(Park_Stats.id, Park_Stats.park_code, Park_Stats.visitors, Park_Stats.year).all()
+    results_park_activities = db.session.query(Park_Activities.id, Park_Activities.parkCode).all()
+    results_visitors = db.session.query(Park_Stats.id, Park_Stats.parkCode, Park_Stats.visitors, Park_Stats.year).all()
     
     # close session
     # session.close()
