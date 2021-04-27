@@ -1,6 +1,6 @@
 // createAllParks(all_data);
-var API_KEY = process.env.API_KEY
-var WEATHER_API = process.env.WEATHER_API
+// var API_KEY = process.env.API_KEY
+// var WEATHER_KEY = process.env.WEATHER_KEY
 
 var allData = [];
 let normalmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -10,7 +10,7 @@ let normalmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}
         minZoom:3,
         zoomOffset: -1,
         id: "mapbox/streets-v11",
-        accessToken: API_KEY
+        accessToken: process.env.API_KEY
 });
 let myMap = L.map('map', {
   center: [39.8283, -98.5795],
@@ -145,7 +145,7 @@ function getCurrentWeather(parkCode){
       break;
      }
    }
-   let url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${WEATHER_KEY}&units=imperial`
+   let url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${process.env.WEATHER_KEY}&units=imperial`
    response = d3.json(url).then(display_temps);
 
 }
