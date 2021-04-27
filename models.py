@@ -35,8 +35,8 @@ def create_classes_park_stats(db):
         __tablename__ = 'parkStats'
         id = db.Column(db.Integer, primary_key=True)
         parkCode = db.Column(db.String(255))
-        visitors = db.Column(db.Integer)
-        year = db.Column(db.Integer)
+        visitors = db.Column(db.String(255))
+        year = db.Column(db.String(255))
         def __repr__(self):
             return '<Park_Stats %r>' % (self.park_code)
     return Park_Stats
