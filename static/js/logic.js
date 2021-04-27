@@ -1,4 +1,7 @@
 // createAllParks(all_data);
+var API_KEY = process.env.API_KEY
+var WEATHER_API = process.env.WEATHER_API
+
 var allData = [];
 let normalmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
         attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
