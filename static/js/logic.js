@@ -146,7 +146,7 @@ function getCurrentWeather(parkCode){
       break;
      }
    }
-   let url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${WEATHER_KEY}&units=imperial`
+   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${WEATHER_KEY}&units=imperial`
    response = d3.json(url).then(display_temps);
 
 }
